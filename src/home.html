@@ -1,0 +1,126 @@
+<!--
+	Copyright 2019 FSC
+	
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+	    http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<title>Home - StrumentalMente</title>
+	<link rel="icon" href="./assets/icon.ico" />
+
+	<link href="./assets/css/style.css" rel="stylesheet" />
+	<!-- FontAwesome -->
+	<link href="./assets/css/fontawesome/css/all.min.css" rel="stylesheet" />
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="StrumentalMente - Dove la musica diventa semplice." />
+	<meta name="keywords" content="StrumentalMente, strumentale, musica, mente, strumenti, imparare, alessi, trollip, multimedia" />
+	<meta name="author" content="FSC" />
+	<meta name="robots" content="index, follow">
+</head>
+
+<body onload="window.parent.setHelper('home');">
+	<div class="topic-wrapper">
+		<div class="content">
+			<article class="fill">
+				<header class="show">
+					<div class="blind-audio-buttons">
+						<button type="button" aria-label="Metti in play/pausa l'audio del lettore" title="Metti in play/pausa l'audio del lettore" id="play-blind-audio" onclick="playStopAudio('blind-audio', this, 'stop-blind-audio');" class="btn-audio btn-accessibility">
+							<i class="fas fa-universal-access"></i>
+						</button>
+						<button type="button" aria-label="Ricomincia dall'inizio la lettura" title="Ricomincia dall'inizio la lettura"  id="stop-blind-audio" class="btn-audio audio-reload" style="display: none;">
+							<i class="fas fa-undo"></i>
+						</button>
+					</div>
+					<h1>Un’introduzione alla musica</h1>
+					<h2>La dolce arte che rallegra i nostri giorni</h2>
+					<audio id="blind-audio" src="./assets/audios/vocals/home/home.wav"></audio>
+					<hr />
+				</header>
+				<section>
+					<audio src="./assets/audios/vocals/home/home.wav"></audio>
+					<p>La musica è una costante della nostra vita: qualsiasi
+						cosa che ci circonda emette un suono. Per chi la studia e
+						per chi la suona, la musica è qualcosa di naturale, un
+						bisogno primario che ci distoglie dalla realtà e ci fa
+						sentire più liberi.</p>
+					<p>La musica, quindi, è una forma d’espressione come
+						la pittura, la poesia, la scultura, la danza e così via.
+						Rispetto a queste, però, la musica è la più astratta, la più
+						libera e la più universale. Essa infatti non ha rimandi
+						semantici, cioè non esiste una correlazione tra suono,
+						immagine e realtà (con l’unica eccezione della musica
+						onomatopeica che, per sua definizione, tende a riprodurre
+						suoni e rumori esistenti nella realtà). La musica risulta
+						sempre dall’articolazione dei suoni.</p>
+					<p>La Musica è una, e le sue espressioni molteplici. Ogni
+						oggetto può diventare uno strumento musicale, e gli
+						strumenti musicali sono innumerevoli. Come scegliere,
+						dunque, “il proprio strumento musicale”? Una
+						buona scelta, sincera e duratura, può derivare
+						dall’ascolto di numerose produzioni musicali, nella
+						quale cercare quel suono, quella ritmica, quel carattere
+						tipico del nostro strumento. Non è utile lasciarsi
+						consigliare da altri, o cadere nei pregiudizi di presunta
+						“facilità o difficoltà”
+						nell’apprendimento. Si seguano solo le proprie
+						passioni, quando si saranno palesate.</p>
+					<p>Ovviamente l’approcciarsi con lo strumento scelto
+						richiede necessariamente, come primo passo, un approccio
+						alla teoria di base della musica.</p>
+				</section>
+			</article>
+			<div class="row topic-buttons" style="grid-template-columns: calc(33% - 16px) calc(33% - 16px) calc(33% - 16px);">
+				<button type="button" class="card-horizontal-alt" title="Apri la sezione teoria (Alt+T)" onclick="parent.document.querySelector('#theory-nav-link>button').click();" style="grid-column: 1; grid-row: 1;">
+					<div class="card-stacked">
+						<div class="card-content">
+							<img class="hide" onload="this.className = 'show';" src="./assets/images/note.jpg" />
+						</div>
+						<div class="card-action">
+							<span class="btn-text">La teoria</span>
+						</div>
+					</div>
+				</button>
+				<button type="button" class="card-horizontal-alt" title="Apri la sezione strumenti (Alt+S S)" onclick="parent.document.querySelector('#instruments-nav-link>button').click();" style="grid-column: 2; grid-row: 1;">
+					<div class="card-stacked">
+						<div class="card-content">
+							<img class="hide" onload="this.className = 'show';" src="./assets/images/guitar.jpg">
+						</div>
+						<div class="card-action">
+							<span class="btn-text">Gli strumenti</span>
+						</div>
+					</div>
+				</button>
+				<button type="button" class="card-horizontal-alt" title="Apri la sezione accordi (Alt+A A)" onclick="parent.document.querySelector('#chords-nav-link>button').click();" style="grid-column: 3; grid-row: 1;">
+					<div class="card-stacked">
+						<div class="card-content">
+							<img class="hide" onload="this.className = 'show';" src="./assets/images/accordi.jpg">
+						</div>
+						<div class="card-action">
+							<span class="btn-text">Gli accordi</span>
+						</div>
+					</div>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="./assets/js/render.js"></script>
+	<script src="./assets/js/main.js"></script>
+</body>
+
+</html>

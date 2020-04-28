@@ -1,0 +1,200 @@
+<!--
+	Copyright 2019 FSC
+	
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+	    http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<title>Accordi basso</title>
+	<link rel="icon" href="../../assets/icon.ico" />
+	<link href="../../assets/css/style.css" rel="stylesheet" />
+	<!-- FontAwesome -->
+	<link href="../../assets/css/fontawesome/css/all.min.css" rel="stylesheet" />
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="StrumentalMente - Dove la musica diventa semplice." />
+	<meta name="keywords" content="StrumentalMente, strumentale, musica, mente, strumenti, imparare, alessi, trollip, multimedia" />
+	<meta name="author" content="FSC" />
+	<meta name="robots" content="index, follow">
+	<style>
+		.card-topic {
+			text-transform: none;
+			visibility: visible;
+			opacity: 1;
+			transition: visibility 0.15s, opacity 0.15s linear;
+		}
+	</style>
+</head>
+
+<body onload="window.parent.setLinks(1, { previous: 'Indice degli strumenti', previousLink: 'chords', next: 'Do', nextLink: 'accordi/do' });">
+	<div class="topic-wrapper">
+		<div class="content">
+			<article class="chords-list" id="list">
+				<section>
+					<header>
+						<h1>Accordi del basso</h1>
+						<h2>Tutto ciò che serve per conoscere gli accordi del basso</h2>
+						<div class="breadcrumbs-container">
+							<div class="breadcrumbs">
+								<button type="button" class="breadcrumb" onclick="window.parent.location.href = '../../home-accordi.html';">Accordi</button>
+								<button type="button" class="breadcrumb" onclick="window.parent.changeTopic('./accordi', './accordi/basso/')">Basso</button>
+								<span class="breadcrumb">Indice (pag. <span id="current-topic-slide">1</span> di <span id="max-topic-slides">1</span>)</span>
+							</div>
+							<div class="page-container">
+								Pag. <span id="current-slide-number">1</span> / <span id="total-slides-number">25</span>
+							</div>
+						</div>
+						<hr />
+					</header>
+					<div class="row">
+						<div class="chords">
+							<button type="button" class="btn-text card-topic" onclick="showSubButtons(this, 'c-chord');">
+								<span>Do</span>
+							</button>
+							<div class="chords-container" id="c-chord" style="display: none;">
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('do', './accordi/basso/accordi/');">
+									<span>Do</span>
+								</button>
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('do-diesis', './accordi/basso/accordi/');">
+									<span>Do#</span>
+								</button>
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('do-minore', './accordi/basso/accordi/');">
+									<span>Dom</span>
+								</button>
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('do-diesis-minore', './accordi/basso/accordi/');">
+									<span>Do#m</span>
+								</button>
+							</div>
+						</div>
+						<div class="chords">
+							<button type="button" class="btn-text card-topic" onclick="showSubButtons(this, 'd-chord');">
+								<span>Re</span>
+							</button>
+							<div class="chords-container" id="d-chord" style="display: none;">
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('re', './accordi/basso/accordi/');">
+									<span>Re</span>
+								</button>
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('re-diesis', './accordi/basso/accordi/');">
+									<span>Re#</span>
+								</button>
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('re-minore', './accordi/basso/accordi/');">
+									<span>Rem</span>
+								</button>
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('re-diesis-minore', './accordi/basso/accordi/');">
+									<span>Re#m</span>
+								</button>
+							</div>
+						</div>
+						<div class="chords">
+							<button type="button" class="btn-text card-topic" onclick="showSubButtons(this, 'e-chord');">
+								<span>Mi</span>
+							</button>
+							<div class="chords-container" id="e-chord" style="display: none;">
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('mi', './accordi/basso/accordi/');" style="grid-row: 1; grid-row-end: 3;">
+									<span>Mi</span>
+								</button>
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('mi-minore', './accordi/basso/accordi/');" style="grid-row: 1; grid-row-end: 3;">
+									<span>Mim</span>
+								</button>
+							</div>
+						</div>
+						<div class="chords">
+							<button type="button" class="btn-text card-topic" onclick="showSubButtons(this, 'f-chord');">
+								<span>Fa</span>
+							</button>
+							<div class="chords-container" id="f-chord" style="display: none;">
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('fa', './accordi/basso/accordi/');">
+									<span>Fa</span>
+								</button>
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('fa-diesis', './accordi/basso/accordi/');">
+									<span>Fa#</span>
+								</button>
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('fa-minore', './accordi/basso/accordi/');">
+									<span>Fam</span>
+								</button>
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('fa-diesis-minore', './accordi/basso/accordi/');">
+									<span>Fa#m</span>
+								</button>
+							</div>
+						</div>
+						<div class="chords">
+							<button type="button" class="btn-text card-topic" onclick="showSubButtons(this, 'g-chord');">
+								<span>Sol</span>
+							</button>
+							<div class="chords-container" id="g-chord" style="display: none;">
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('sol', './accordi/basso/accordi/');">
+									<span>Sol</span>
+								</button>
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('sol-diesis', './accordi/basso/accordi/');">
+									<span>Sol#</span>
+								</button>
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('sol-minore', './accordi/basso/accordi/');">
+									<span>Solm</span>
+								</button>
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('sol-diesis-minore', './accordi/basso/accordi/');">
+									<span>Sol#m</span>
+								</button>
+							</div>
+						</div>
+						<div class="chords">
+							<button type="button" class="btn-text card-topic" onclick="showSubButtons(this, 'a-chord');">
+								<span>La</span>
+							</button>
+							<div class="chords-container" id="a-chord" style="display: none;">
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('la', './accordi/basso/accordi/');">
+									<span>La</span>
+								</button>
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('la-diesis', './accordi/basso/accordi/');">
+									<span>La#</span>
+								</button>
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('la-minore', './accordi/basso/accordi/');">
+									<span>Lam</span>
+								</button>
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('la-diesis-minore', './accordi/basso/accordi/');">
+									<span>La#m</span>
+								</button>
+							</div>
+						</div>
+						<div class="chords">
+							<button type="button" class="btn-text card-topic" onclick="showSubButtons(this, 'b-chord');">
+								<span>Si</span>
+							</button>
+							<div class="chords-container" id="b-chord" style="display: none;">
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('si', './accordi/basso/accordi/');" style="grid-row: 1; grid-row-end: 3;">
+									<span>Si</span>
+								</button>
+								<button type="button" class="btn-text card-topic" onclick="window.parent.changeTopic('si-minore', './accordi/basso/accordi/');" style="grid-row: 1; grid-row-end: 3;">
+									<span>Sim</span>
+								</button>
+							</div>
+						</div>
+						<div class="chords">
+							<button type="button" class="btn-text card-topic" onclick="parent.parent.openUrl('./accordi/basso/quiz.html')">
+								<span>Quiz</span>
+							</button>
+						</div>
+					</div>
+				</section>
+			</article>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../assets/js/render.js"></script>
+	<script type="text/javascript" src="../../assets/js/main.js"></script>
+</body>
+
+</html>

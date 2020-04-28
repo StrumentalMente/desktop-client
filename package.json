@@ -1,0 +1,78 @@
+{
+	"name": "strumentalmente",
+	"version": "1.0.1",
+	"description": "StrumentalMente",
+	"main": "src/app.js",
+	"scripts": {
+		"build": "cd src && npx tsc",
+		"start": "yarn run build && electron .",
+		"pack": "yarn run build && electron-builder --dir",
+		"dist": "yarn run build && electron-builder"
+	},
+	"build": {
+		"appId": "com.fsc.strumentalmente",
+		"productName": "StrumentalMente",
+		"copyright": "Copyright © 2019 FSC",
+		"directories": {
+			"buildResources": "build"
+		},
+		"mac": {
+			"category": "public.app-category.education"
+		},
+		"win": {
+			"target": "nsis"
+		},
+		"nsis": {
+			"oneClick": false,
+			"license": "LICENSE.html",
+			"language": "0x0410",
+			"installerSidebar": "installerSidebar.bmp"
+		},
+		"linux": {
+			"target": "snap"
+		}
+	},
+	"repository": "https://github.com/F-S-C/StrumentalMente",
+	"author": {
+		"name": "FSC - Five Students of Computer Science",
+		"url": "https://f-s-c.github.io",
+		"email": "info@strumentalmente.it"
+	},
+	"contributors": [
+		{
+			"name": "Andrea Esposito",
+			"url": "https://espositoandrea.github.io"
+		},
+		{
+			"name": "Alessandro Annese",
+			"url": "https://github.com/Ax3lFernus"
+		},
+		{
+			"name": "Graziano Montanaro",
+			"url": "https://github.com/prewarning"
+		},
+		{
+			"name": "Regina Zaccaria",
+			"url": "https://github.com/ReginaZaccaria"
+		},
+		{
+			"name": "Davide De Salvo",
+			"url": "https://github.com/Davidedes"
+		}
+	],
+	"license": "Apache-2.0",
+	"devDependencies": {
+		"@types/node-localstorage": "^1.3.0",
+		"electron": "^4.0.8",
+		"electron-builder": "^20.38.5",
+		"typescript": "^3.3.4000"
+	},
+	"dependencies": {
+		"fs": "^0.0.1-security",
+		"jquery": "^3.3.1",
+		"lru-cache": "^5.1.1",
+		"mousetrap": "^1.6.3",
+		"node-localstorage": "^1.3.1"
+	},
+	"postinstall": "electron-builder install-app-deps"
+}

@@ -1,0 +1,88 @@
+#quiz_container {
+	width: 100%;
+	height: calc(90vh - 20px);
+	padding: 0;
+	border: none;
+	display: block;
+	overflow: hidden;
+}
+
+.main-wrapper .content {
+	padding: 0 30px;
+}
+
+section>form {
+	margin-top: 5em;
+	display: grid;
+	grid-template-rows: 13em 13em;
+	grid-template-columns: 50% 50%;
+	grid-template-areas: "a b" "c d";
+}
+
+section>form>input[type="radio"] {
+	cursor: pointer;
+	overflow: hidden;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-khtml-appearance: none;
+	background-image: url('../../images/schemi_base_chitarra/indicatore_vuoto.svg');
+	background-repeat: no-repeat;
+	width: 25px;
+	height: 25px;
+}
+
+section>form>input[type="radio"]:checked, section>form>input[type="radio"]:checked:hover {
+	background-image: url('../../images/schemi_base_chitarra/indicatore_pieno.svg');
+}
+
+section>form>input[type="radio"]:hover {
+	background-image: url('../../images/schemi_base_chitarra/indicatore_hover.svg');
+}
+
+section>form>input[type="radio"]:disabled, section>form>input[type="radio"]:disabled+label {
+	cursor: default;
+}
+
+section>form>input[type="radio"]:disabled:hover {
+	background-image: url('../../images/schemi_base_chitarra/indicatore_vuoto.svg');
+	cursor: default;
+}
+
+section>form>input[type="radio"]:checked+label {
+	font-weight: 700;
+}
+
+section>form>input[type="radio"]+label {
+	cursor: pointer;
+}
+
+section>form>input[type="radio"].correct, section>form>input[type="radio"].correct:hover {
+	background-image: url('../../images/schemi_base_chitarra/indicatore_risposta_corretta.svg');
+	cursor: default;
+}
+
+section>form>input[type="radio"].wrong, section>form>input[type="radio"].wrong:hover {
+	background-image: url('../../images/schemi_base_chitarra/indicatore_risposta_sbagliata.svg');
+	cursor: default;
+}
+
+section>form>input[type="radio"].correct_not_selected, section>form>input[type="radio"].correct_not_selected:hover {
+	background-image: url('../../images/schemi_base_chitarra/indicatore_risposta_corretta_non_selezionata.svg');
+	cursor: default;
+}
+
+section>form>input[type="radio"].disabled, section>form>input[type="radio"].disabled:hover {
+	background-image: url('../../images/schemi_base_chitarra/indicatore_disabilitato.svg');
+	cursor: default;
+}
+
+section>form>label {
+	font-size: 23px;
+	margin-left: 2em;
+	margin-top: 1px;
+	max-width: 75%;
+}
+
+section>h2 {
+	font-size: 35px;
+}

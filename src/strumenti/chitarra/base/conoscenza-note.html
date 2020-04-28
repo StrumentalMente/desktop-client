@@ -1,0 +1,297 @@
+<!--
+	Copyright 2019 FSC
+	
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+	    http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<title>Strumenti - Teoria chitarra</title>
+	<link rel="icon" href="../../../assets/icon.ico" />
+	<link href="../../../assets/css/style.css" rel="stylesheet" />
+	<!-- FontAwesome -->
+	<link href="../../../assets/css/fontawesome/css/all.min.css" rel="stylesheet" />
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="StrumentalMente - Dove la musica diventa semplice." />
+	<meta name="keywords" content="StrumentalMente, strumentale, musica, mente, strumenti, imparare, alessi, trollip, multimedia" />
+	<meta name="author" content="FSC" />
+	<meta name="robots" content="index, follow">
+
+	<style>
+		.slideshow-container figure {
+			display: none;
+			float: inherit;
+			width: 80%;
+			margin: auto;
+		}
+
+		.slideshow-container figure img {
+			vertical-align: middle;
+		}
+
+		.slideshow-container {
+			max-width: 1000px;
+			position: relative;
+			margin: auto;
+		}
+
+		.prev,
+		.next {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: auto;
+			padding: 16px;
+			margin-top: -22px;
+			color: white;
+			font-weight: bold;
+			font-size: 18px;
+			transition: 0.6s ease;
+			border-radius: 0 3px 3px 0;
+			user-select: none;
+			background-color: rgba(0, 0, 0, 0.8);
+			border: none;
+		}
+
+		.next {
+			right: 0;
+			border-radius: 3px 0 0 3px;
+		}
+
+		.prev:hover,
+		.next:hover {
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
+		.prev:active,
+		.next:active {
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+
+		.slideshow-container figure figcaption {
+			font-size: 15px;
+			padding: 8px 12px;
+			bottom: 8px;
+			width: 100%;
+			text-align: center;
+		}
+
+		.dot {
+			cursor: pointer;
+			height: 10px;
+			width: 10px;
+			margin: 0 2px;
+			background-color: #bbb;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.6s ease;
+		}
+
+		.active,
+		.dot:hover {
+			background-color: #717171;
+		}
+
+		.fade {
+			animation-name: fade;
+			animation-duration: .5s;
+		}
+
+		@keyframes fade {
+			0% {
+				opacity: 0
+			}
+
+			100% {
+				opacity: 1
+			}
+		}
+
+		/* On smaller screens, decrease text size */
+		@media only screen and (max-width: 300px) {
+
+			.prev,
+			.next,
+			.text {
+				font-size: 11px
+			}
+		}
+	</style>
+</head>
+
+<body onload="window.parent.setLinks(8, { previous: 'Mano destra e sinistra', previousLink: 'base/mano-destra-sinistra', next: 'Il Metodo Sagreras', nextLink: 'base/metodo-sagreras' });">
+	<div class="topic-wrapper">
+		<div class="content">
+			<article>
+				<header class="show">
+					<h1>Conoscenza delle note</h1>
+					<h2>La conoscenza delle note</h2>
+					<div class="breadcrumbs-container">
+						<div class="breadcrumbs">
+							<button type="button" class="breadcrumb" onclick="window.parent.location.href = '../../home-strumenti.html';">Strumenti</button>
+							<button type="button" class="breadcrumb" onclick="window.parent.changeTopic('./argomenti', './strumenti/chitarra/')">Chitarra</button>
+							<span class="breadcrumb">Base</span>
+							<span class="breadcrumb">Conoscenza delle note (pag. <span id="current-topic-slide">1</span>
+								di <span id="max-topic-slides">1</span>)</span>
+						</div>
+						<div class="page-container">
+							Pag. <span id="current-slide-number">1</span> / <span id="total-slides-number">20</span>
+						</div>
+					</div>
+					<hr />
+				</header>
+				<section class="hide">
+					<p>La prima cosa, da mettere in chiaro, è la corrispondenza
+						fra la scala musicale di sette note e la corrispondenza
+						internazionale, utile per suonare la chitarra. Quindi, si
+						ha:</p>
+					<table class="notes-table highlight cols">
+						<tbody>
+							<tr>
+								<th class="row">Nota</th>
+								<td>Do</td>
+								<td>Re</td>
+								<td>Mi</td>
+								<td>Fa</td>
+								<td>Sol</td>
+								<td>La</td>
+								<td>Si</td>
+							</tr>
+							<tr>
+								<th class="row">Nome internazionale</th>
+								<td>C</td>
+								<td>D</td>
+								<td>E</td>
+								<td>F</td>
+								<td>G</td>
+								<td>A</td>
+								<td>B</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>Dall’alto (dov’è la corda più spessa, che produce quindi
+						un suono più grave) verso il basso (dov’è la corda più
+						sottile, che produce quindi un suono più acuto), si contano
+						le corde della chitarra nel seguente modo:</p>
+					<p><strong>Mi – La – Re – Sol – Si – Mi cantino</strong></p>
+					<p>La corrispondenza con il pentagramma è la seguente:</p>
+					<figure class="center" style="width: 75%;">
+						<img class="hide" onload="this.className = 'show';" src="../../../assets/images/pentagramma.svg" alt="Le note della chitarra nel pentagramma">
+					</figure>
+					<p>È chiaro che premendo le corde in corrispondenza dei vari
+						tasti, si ottengono altre note. Per esempio, premendo la
+						corda La, al terzo tasto, si ottiene un Do, mentre, premendo
+						la corda Re, sempre al terzo tasto, si ottiene un Fa etc. Da
+						questo si evince che: una stessa nota, ad esempio Do, può
+						essere suonata premendo le corde in tasti differenti sulla
+						tastiera della chitarra.</p>
+				</section>
+				<section class="hide">
+					<p>Per trovare un <strong>diesis</strong> basta spostarsi un
+						<strong>tasto avanti</strong>, per un
+						<strong>bemolle</strong>, invece, basta spostarsi un
+						<strong>tasto indietro</strong>, a eccezione degli
+						intervalli fra Mi – Fa e fra Si – Do. La distanza fra
+						ogni tasto della chitarra è di un
+						<strong>semitono</strong>.</p>
+					<div style="margin-top: 5rem;">
+						<div class="slideshow-container">
+							<figure class="fade">
+								<img src="../../../assets/images/schemi_note_chitarra/C.svg" width="35%">
+								<figcaption><span>Figura 1 di 7</span>: Do</figcaption>
+							</figure>
+							<figure class="fade">
+								<img src="../../../assets/images/schemi_note_chitarra/D.svg" width="35%">
+								<figcaption><span>Figura 2 di 7</span>: Re</figcaption>
+							</figure>
+							<figure class="fade">
+								<img src="../../../assets/images/schemi_note_chitarra/E.svg" width="35%">
+								<figcaption><span>Figura 3 di 7</span>: Mi</figcaption>
+							</figure>
+							<figure class="fade">
+								<img src="../../../assets/images/schemi_note_chitarra/F.svg" width="35%">
+								<figcaption><span>Figura 4 di 7</span>: Fa</figcaption>
+							</figure>
+							<figure class="fade">
+								<img src="../../../assets/images/schemi_note_chitarra/G.svg" width="35%">
+								<figcaption><span>Figura 5 di 7</span>: Sol</figcaption>
+							</figure>
+							<figure class="fade">
+								<img src="../../../assets/images/schemi_note_chitarra/A.svg" width="35%">
+								<figcaption><span>Figura 6 di 7</span>: La</figcaption>
+							</figure>
+							<figure class="fade">
+								<img src="../../../assets/images/schemi_note_chitarra/B.svg" width="35%">
+								<figcaption><span>Figura 7 di 7</span>: Si</figcaption>
+							</figure>
+
+							<button type="button" class="prev" onclick="plusSlides(-1)">&#10094;</button>
+							<button type="button" class="next" onclick="plusSlides(1)">&#10095;</button>
+						</div>
+						<div style="text-align:center; margin-top: 15px;">
+							<span class="dot" onclick="currentSlide(1);"></span>
+							<span class="dot" onclick="currentSlide(2);"></span>
+							<span class="dot" onclick="currentSlide(3);"></span>
+							<span class="dot" onclick="currentSlide(4);"></span>
+							<span class="dot" onclick="currentSlide(5);"></span>
+							<span class="dot" onclick="currentSlide(6);"></span>
+							<span class="dot" onclick="currentSlide(7);"></span>
+						</div>
+					</div>
+				</section>
+			</article>
+		</div>
+	</div>
+	</div>
+
+	<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+			var slides = document.querySelectorAll(".slideshow-container figure");
+			var dots = document.getElementsByClassName("dot");
+
+			slideIndex = (n < 1) ? slides.length : (n > slides.length) ? 1 : slideIndex;
+
+			for (let i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+
+			for (let i = 0; i < dots.length; i++) {
+				dots[i].classList.remove("active");
+			}
+
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].classList.add("active");
+		}
+	</script>
+
+
+	<script type="text/javascript" src="../../../assets/js/render.js"></script>
+	<script type="text/javascript" src="../../../assets/js/main.js"></script>
+</body>
+
+</html>

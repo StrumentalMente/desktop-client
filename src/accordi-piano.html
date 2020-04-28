@@ -1,0 +1,71 @@
+<!--
+	Copyright 2019 FSC
+	
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+	    http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<title>Accordi pianoforte</title>
+	<link rel="icon" href="./assets/icon.ico" />
+	<link href="./assets/css/style.css" rel="stylesheet" />
+	<!-- FontAwesome -->
+	<link href="./assets/css/fontawesome/css/all.min.css" rel="stylesheet" />
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="StrumentalMente - Dove la musica diventa semplice." />
+	<meta name="keywords" content="StrumentalMente, strumentale, musica, mente, strumenti, imparare, alessi, trollip, multimedia" />
+	<meta name="author" content="FSC" />
+	<meta name="robots" content="index, follow">
+</head>
+
+<body onload="initialize('accordi' , 'accordi/piano/', 25);">
+	<div class="sub-wrapper">
+		<div class="sub-wrapper">
+			<div class="content">
+				<iframe id="topic-frame" src="./accordi/piano/accordi.html" class="slide-container"></iframe>
+				<div class="buttons-container">
+					<div class="first-column">
+						<button type="button" id="back-topic" class="btn-outlined">
+							Indice degli strumenti <i class="btn-icon left fas fa-arrow-alt-circle-left"></i>
+						</button>
+						<button type="button" id="back" class="btn-outlined" style="display: none;">
+							Indietro <i class="btn-icon left fas fa-arrow-alt-circle-left"></i>
+						</button>
+					</div>
+					<div class="second-column">
+						<button type="button" id="back-to-list" title="Torna all'elenco degli accordi" class="btn-text" onclick="changeTopic('./accordi', './accordi/piano/')" style="display: none;">
+							Indice <i class="btn-icon left fas fa-list"></i>
+						</button>
+					</div>
+					<div class="third-column">
+						<button type="button" id="next" class="btn" style="display: none;">
+							Avanti <i class="btn-icon fas fa-arrow-circle-right"></i>
+						</button>
+						<button type="button" id="next-topic" class="btn">
+							Do <i class="btn-icon fas fa-arrow-circle-right"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="./assets/js/render.js"></script>
+	<script type="text/javascript" src="./assets/js/main.js"></script>
+</body>
+
+</html>

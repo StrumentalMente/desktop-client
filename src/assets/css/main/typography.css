@@ -1,0 +1,197 @@
+body {
+	font-family: var(--font-text);
+	font-size: 17px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-title);
+}
+
+h1 {
+	font-size: 35pt;
+	margin: 0.5em 0;
+}
+
+h2 {
+	font-size: 20pt;
+	margin: 0.5em 0;
+}
+
+h3 {
+	font-size: 15pt;
+	margin: 0.5em 0;
+}
+
+h4 {
+	font-size: 11pt;
+	margin: 0.5em 0;
+}
+
+h5 {
+	font-size: 10pt;
+	margin: 0.5em 0;
+}
+
+h6 {
+	font-size: 9pt;
+	margin: 0.5em 0;
+}
+
+header h1+h2 {
+	color: #666;
+	font-size: 15pt;
+	margin-top: -1em;
+}
+
+header hr {
+	clear: both;
+}
+
+aside {
+	font-style: italic;
+}
+
+dt {
+	float: left;
+	clear: left;
+	text-align: right;
+	font-weight: bold;
+	margin-right: 0.5em;
+}
+
+dt::after {
+	display: contents;
+	content: ": ";
+}
+
+dd {
+	/* display: inline; */
+	margin: 0 0 0 10px;
+	padding: 0 0 0.5em 0;
+}
+
+.help_ul>li {
+	margin-top: 8px;
+}
+
+kbd {
+	padding: 2px 5px;
+	background-color: #e8e8e8;
+	color: #333333;
+	border-radius: 5px;
+	font-family: "RobotoMono";
+	font-weight: 300;
+	margin: 0px 3px 0px 3px;
+}
+
+aside h6, aside p {
+	display: inline;
+}
+
+table {
+	border-collapse: collapse;
+	overflow: hidden;
+	border-spacing: 0;
+	margin: 25px auto;
+	box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+table.right {
+	float: right;
+	margin: 25px;
+}
+
+table td {
+	position: relative;
+	border-right: 1px solid rgba(0, 0, 0, 0.12);
+	padding: 10px 15px;
+	word-break: normal;
+	text-align: left;
+}
+
+table th {
+	position: relative;
+	text-align: left;
+	border-right: 1px solid rgba(0, 0, 0, 0.12);
+	color: rgba(0, 0, 0, 0.54);
+	font-weight: normal;
+	padding: 10px 15px;
+}
+
+table th.row {
+	width: initial;
+}
+
+.notes-table {
+	margin: 0px auto;
+}
+
+.notes-table td {
+	text-align: center;
+}
+
+.notes-table tr {
+	text-align: center;
+}
+
+table.highlight.rows tbody tr:hover {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+table.highlight td:hover::after, table.highlight thead th:not(:empty):hover::after, table.highlight td:focus::after, table.highlight thead th:not(:empty):focus::after, table.highlight td:hover::after, table.highlight thead th:not(:empty):hover::after, table.highlight td:focus::after, table.highlight thead th:not(:empty):focus::after {
+	content: "";
+	height: 10000px;
+	left: 0;
+	position: absolute;
+	top: -5000px;
+	width: 100%;
+	z-index: -1;
+}
+
+table.highlight.cols td:hover::after, table.highlight.cols th:hover::after {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+h1.center, h2.center, h3.center, h4.center, h5.center, h6.center {
+	text-align: center;
+}
+
+table .note-cell {
+	text-align: center;
+	font-size: x-large;
+}
+
+@media only screen and (max-width: 768px) {
+	body {
+		font-size: 15px;
+	}
+	h1 {
+		font-size: 30pt;
+	}
+	h2 {
+		font-size: 17px;
+	}
+	header h1+h2 {
+		font-size: 13pt;
+	}
+}
+
+.scrollable-table-container {
+	margin: 25px auto;
+	height: 300px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px;
+	overflow-y: auto;
+}
+
+.scrollable-table-container table {
+	margin: 0;
+	box-shadow: none;
+	overflow: auto;
+}
+
+.scrollable-table-container table thead th {
+	position: sticky;
+	top: 0;
+	background-color: white;
+	z-index: 1;
+}

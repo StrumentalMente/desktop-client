@@ -1,0 +1,99 @@
+<!--
+	Copyright 2019 FSC
+	
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+	    http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<title>Sicuro?</title>
+	<link rel="icon" href="../assets/icon.ico" />
+
+	<link href="../assets/css/style.css" rel="stylesheet" />
+	<!-- FontAwesome -->
+	<link href="../assets/css/fontawesome/css/all.min.css" rel="stylesheet" />
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="StrumentalMente - Dove la musica diventa semplice." />
+	<meta name="keywords" content="StrumentalMente, strumentale, musica, mente, strumenti, imparare, alessi, trollip, multimedia" />
+	<meta name="author" content="FSC" />
+	<meta name="robots" content="index, follow">
+	<meta property="og:image" content="https://f-s-c.github.io/StrumentalMente/logo/2048x2048.png">
+</head>
+
+<body onload="disableShortcuts();">
+	<header>
+		<div id="titlebar">
+			<div id="drag-region">
+				<div id="window-title">
+					<img class="hide" onload="this.className = 'show';" id="window-title-image" src="../assets/icon.ico" alt="Icona" />
+					<span id="window-title-text">Sicuro?</span>
+				</div>
+				<div id="window-controls">
+					<div class="button sub-window" id="close-button">
+						<span><i class="fas fa-times" style="font-size: 1.2em;"></i></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="main-wrapper">
+		<div class="landing-page-wrapper" style="width: 75%;">
+			<header class="site-name" id="label">
+				<p>Sicuro di voler uscire dall'applicazione?</p>
+			</header>
+			<button type="button" id="no-btn" class="btn-outlined" onclick="cancel();">No</button>
+			<button type="button" id="yes-btn" style="margin-left: 2.5em;" class="btn" onclick="response();" autofocus>Sì</button>
+		</div>
+	</div>
+
+	<script src="../assets/js/electron-interface.js"></script>
+	<script src="../assets/js/render.js"></script>
+
+
+	<script>
+		var yesReturn;
+		var noReturn;
+		const { ipcRenderer } = require("electron");
+
+		/** Risposta negativa */
+		function cancel() {
+			ipcRenderer.send("closeDialog", noReturn);
+			this.close();
+		}
+
+		/** Risposta positiva */
+		function response() {
+			ipcRenderer.send("closeDialog", yesReturn);
+			this.close();
+		}
+
+		/** Caricamento dei parametri */
+		window.onload = function () {
+			var options = ipcRenderer.sendSync("openDialog", "");
+			var params = JSON.parse(options);
+			document.getElementById("window-title-text").innerHTML = params.title || document.getElementById("window-title-text").innerHTML;
+			document.getElementById("label").innerHTML = params.label;
+			document.getElementById("yes-btn").innerHTML = params.yes;
+			document.getElementById("no-btn").innerHTML = params.no;
+			yesReturn = params.yesReturn;
+			noReturn = params.noReturn;
+		}
+	</script>
+</body>
+
+</html>

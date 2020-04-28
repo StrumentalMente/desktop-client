@@ -1,0 +1,317 @@
+<!--
+	Copyright 2019 FSC
+	
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+	    http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<title>StrumentalMente</title>
+	<link rel="icon" href="./assets/icon.ico" />
+
+	<link href="./assets/css/style.css" rel="stylesheet" />
+	<!-- FontAwesome -->
+	<link href="./assets/css/fontawesome/css/all.min.css" rel="stylesheet" />
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="StrumentalMente - Dove la musica diventa semplice." />
+	<meta name="keywords" content="StrumentalMente, strumentale, musica, mente, strumenti, imparare, alessi, trollip, multimedia" />
+	<meta name="author" content="FSC" />
+	<meta name="robots" content="index, follow">
+</head>
+
+<body class="hide">
+	<header>
+		<div id="titlebar">
+			<div id="drag-region">
+				<div id="window-title">
+					<img class="hide" onload="this.className = 'show';" id="window-title-image" src="./assets/icon.ico" alt="Icona" />
+					<span id="window-title-text">StrumentalMente</span>
+				</div>
+				<div id="window-controls">
+					<div class="button" id="min-button">
+						<span><i class="fas fa-minus" style="font-size: 1.2em;"></i></span>
+					</div>
+					<div class="button" id="max-button">
+						<span><i class="far fa-window-maximize" style="font-size: 1.2em;"></i></span>
+					</div>
+					<div class="button" id="restore-button">
+						<span><i class="far fa-window-restore" style="font-size: 1.2em;"></i></span>
+					</div>
+					<div class="button" id="close-button">
+						<span><i class="fas fa-times" style="font-size: 1.2em;"></i></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+	<div id="landing-container">
+		<ul class="slideshow">
+			<li><span></span></li><!-- Image 1 -->
+			<li><span></span></li><!-- Image 2 -->
+			<li><span></span></li><!-- Image 3 -->
+			<li><span></span></li><!-- Image 4 -->
+			<li><span></span></li><!-- Image 5 -->
+			<li><span></span></li><!-- Image 6 -->
+		</ul>
+		<div class="landing-page-wrapper">
+			<header class="site-name">
+				<div style="display: grid;">
+					<p title="Cuffie consigliate" style="font-size: 8pt;color: var(--grey); grid-column: 1;">
+						<i class="fas fa-headphones-alt" style="font-size: 15pt; color: white; margin-bottom: 5px;"></i><br />
+						Cuffie consigliate
+					</p>
+					<p title="Schermo intero consigliato (F11)" style="font-size: 8pt;color: var(--grey); grid-column: 2;">
+						<i class="fas fa-expand-arrows-alt" style="font-size: 15pt; color: white; margin-bottom: 5px;"></i><br />
+						Schermo intero consigliato
+					</p>
+				</div>
+				<h1>StrumentalMente</h1>
+				<h2>Dove la musica diventa semplice</h2>
+			</header>
+			<button type="button" title="Avvia l'app (Invio)" onclick="startApp();" class="btn start-button">
+				Inizia <i class="btn-icon far fa-play-circle"></i>
+			</button>
+		</div>
+	</div>
+	<div class="main-wrapper">
+		<nav class="main-navigation" id="main-nav">
+			<ul>
+				<li class="logo">
+					<button type="button" onclick="openPage('./home.html', 'home');" title="StrumentalMente">
+						<img src="./assets/icon.ico" width="" height="" alt="Logo di StrumentalMente" />
+						<h1>Strumental<wbr /><span>Mente</span></h1>
+					</button>
+				</li>
+				<li id="home-nav-link">
+					<button class="active" type="button" onclick="openPage('./home.html', 'home');" title="Torna alla home (Alt+H)">
+						<i class="fas fa-home"></i> Home
+					</button>
+				</li>
+				<li id="profile-nav-link">
+					<button type="button" onclick="openPage('./profile.html', 'profile');" title="Mostra il profilo dell'utente (Alt+P)">
+						<i class="fas fa-user-circle"></i> Profilo
+					</button>
+				</li>
+				<li id="theory-nav-link">
+					<button type="button" onclick="openPage('./home-teoria.html', 'theory');" title="Apri la lista degli argomenti (Alt+T)">
+						<i class="fas fa-book"></i> Teoria Musicale
+					</button>
+				</li>
+				<li id="instruments-nav-link">
+					<button type="button" onclick="openPage('./home-strumenti.html', 'instruments');" title="Apri la lista di strumenti (Alt+S S)">
+						<i class="fas fa-guitar"></i> Teoria Strumenti
+					</button>
+				</li>
+				<li id="chords-nav-link">
+					<button type="button" onclick="openPage('./home-accordi.html', 'chords');" title="Apri la lista di strumenti per vederne gli accordi (Alt+A A)">
+						<i class="fas fa-music"></i> Accordi
+					</button>
+				</li>
+				<li id="map-nav-link">
+					<button type="button" onclick="openModal('./map.html');" title="Mostra la mappa (Alt+M)">
+						<i class="fas fa-map"></i> Mappa
+					</button>
+				</li>
+				<li id="help-nav-link">
+					<button type="button" onclick="openModal('./helpers/help-home.html');" title="Mostra l'aiuto (F1)">
+						<i class="fas fa-question"></i> Aiuto
+					</button>
+				</li>
+				<li id="info-nav-link">
+					<button type="button" onclick="openModal('./about.html');" title="Informazioni  (Alt+I)">
+						&nbsp;<i class="fas fa-info"></i> Informazioni
+					</button>
+				</li>
+				<li id="exit-nav-link">
+					<button type="button" onclick="showExitDialog();" title="Esci dall'app (Esc)">
+						<i class="fas fa-sign-out-alt"></i> Esci
+					</button>
+				</li>
+			</ul>
+
+			<footer>
+				<p>Copyright &copy; 2019, <a class="external" onclick="openInBrowser('https:\/\/f-s-c.github.io\/');" href="javascript:void(0);">FSC</a>.
+					Rilasciato sotto la
+					licenza <a class="external" onclick="openInBrowser('https:\/\/www.apache.org\/licenses\/LICENSE-2.0');" href="javascript:void(0);">Apache
+						2.0</a>.</p>
+				<img class="hide" onload="this.className = 'show';" src="./assets/images/fsc-logo-svg.svg" />
+			</footer>
+		</nav>
+		<button type="button" id="sidebar-controller" onclick="openMobileNavigation();">
+			<i class="fas fa-bars"></i>
+		</button>
+
+		<div class="content">
+			<iframe id="content-frame" src="./home.html" class="slide-container" onload="setShortcuts(this.contentWindow.document || this.contentDocument);"></iframe>
+		</div>
+	</div>
+
+	<script src="./assets/js/render.js"></script>
+	<script src="./assets/js/main.js"></script>
+	<script src="./assets/js/vendor/jquery.maphilight.js"></script>
+	<script>
+		document.body.onload = () => {
+			document.body.className = 'show';
+
+			let setupMedia = (doc) => {
+				let mediaElements = Array.from(doc.querySelectorAll("video, audio"));
+				mediaElements.forEach(media => {
+					media.addEventListener("play", () => {
+						mediaElements.forEach(otherMedia => {
+							otherMedia != media && otherMedia.pause();
+						});
+					})
+				});
+			};
+
+			let iFrame = document.getElementById("content-frame");
+			let iFrameDocument = undefined;
+			if (iFrame) {
+				iFrame.addEventListener("load", () => {
+					if (iFrame) {
+						iFrameDocument = iFrame.contentWindow.document || iFrame.contentDocument;
+						setupMedia(iFrameDocument);
+						iFrame = iFrameDocument.getElementById("topic-frame");
+						if (iFrame) {
+							iFrame.addEventListener("load", () => {
+								if (iFrame) {
+									iFrameDocument = iFrame.contentWindow.document || iFrame.contentDocument;
+									setupMedia(iFrameDocument);
+								}
+							});
+						}
+					}
+				});
+			}
+
+		};
+
+		let landingContainer = document.getElementById("landing-container");
+
+		var params = (new URL(location.href)).searchParams;
+
+		if (params.get("started")) {
+			landingContainer.parentNode.removeChild(landingContainer);
+		}
+		else
+			require("mousetrap").bind("enter", () => { document.querySelector("#landing-container .start-button").click(); });
+
+		if (params.has("topic")) {
+			let instrument = "";
+			let generalTopic = (key => {
+				if (key.match(/teoria\-.*/i) || key.match(/home\-strumenti/i)) {
+					instrument = (/(?:(?:teoria)|(?:home))\-(.*)\.html/i.exec(params.get("topic")))[1] || "";
+					return "home-strumenti";
+				}
+				else if (key.match(/accordi\-.*/i) || key.match(/home\-accordi/i)) {
+					instrument = (/(?:(?:home)|(?:accordi))\-(.*)\.html/i.exec(params.get("topic")))[1] || "";
+					return "home-accordi";
+				}
+				else
+					return "home-teoria";
+			})(params.get("topic"));
+
+
+			let navbutton = Array.from(document.getElementsByTagName("button"))
+				.filter(btn => btn.getAttribute("onclick").includes("openPage") && btn.getAttribute("onclick").includes(generalTopic))[0];
+			navbutton && navbutton.click();
+
+			if (generalTopic.match(/home\-((?:strumenti)|(?:accordi))/) && instrument != "") {
+				let type = /home\-((?:strumenti)|(?:accordi))/i.exec(generalTopic)[1];
+				type = type == "strumenti" ? "teoria" : type;
+				window.history.replaceState(null, null, `?started=true&topic=./${type}-${instrument}.html`);
+			}
+
+			if (!params.has("to-home") || params.get("to-home") == "false") {
+				document.getElementById("content-frame").src = params.get("topic");
+			}
+		}
+
+		function startApp() {
+			landingContainer.classList.add("removing");
+			setTimeout(() => {
+				window.history.replaceState(null, null, "?started=true");
+				landingContainer.parentNode.removeChild(landingContainer);
+			}, 400);
+		}
+
+		function onMapImageLoad() {
+			let $ = require("jquery");
+			$('img[usemap]').maphilight();
+		}
+
+		var bibliographyHidden = true;
+		function summaryClicked() {
+			elem = document.getElementById("bibliography").getElementsByTagName("summary")[0];
+			bibliographyHidden = !bibliographyHidden;
+			elem.innerHTML = (bibliographyHidden) ? "Mostra la bibliografia." : "Nascondi la bibliografia.";
+		}
+
+		function openFromMap(target) {
+			document.getElementById("dialog-close-button").click();
+			switch (target) {
+				case "index":
+					parent.document.querySelector("#home-nav-link>button").click();
+					break;
+				case "teoria":
+					parent.document.querySelector("#theory-nav-link>button").click();
+					break;
+				case "strumenti":
+					parent.document.querySelector("#instruments-nav-link>button").click();
+					break;
+				case "chitarra":
+					warnIfIncomplete('base', 'teoria base', 'agli strumenti', () => { parent.window.location.href = "./index.html?started=true&topic=./teoria-chitarra.html&to-home=false"; });
+					break;
+				case "basso":
+					warnIfIncomplete('base', 'teoria base', 'agli strumenti', () => { parent.window.location.href = "./index.html?started=true&topic=./teoria-basso.html&to-home=false"; });
+					break;
+				case "batteria":
+					warnIfIncomplete('base', 'teoria base', 'agli strumenti', () => { parent.window.location.href = "./index.html?started=true&topic=./teoria-batteria.html&to-home=false"; });
+					break;
+				case "piano":
+					warnIfIncomplete('base', 'teoria base', 'agli strumenti', () => { parent.window.location.href = "./index.html?started=true&topic=./teoria-piano.html&to-home=false"; });
+					break;
+				case "accordi":
+					parent.document.querySelector("#chords-nav-link>button").click();
+					break;
+				case "accordi-chitarra":
+					warnIfIncomplete('chitarra', 'teoria della chitarra', 'agli accordi della chitarra', () => { parent.window.location.href = "./index.html?started=true&topic=./accordi-chitarra.html&to-home=false"; });
+					break;
+				case "accordi-basso":
+					warnIfIncomplete('basso', 'teoria del basso', 'agli accordi del basso', () => { parent.window.location.href = "./index.html?started=true&topic=./accordi-basso.html&to-home=false"; });
+					break;
+				case "accordi-piano":
+					warnIfIncomplete('piano', 'teoria del pianoforte', 'agli accordi del pianoforte', () => { parent.window.location.href = "./index.html?started=true&topic=./accordi-piano.html&to-home=false"; });
+					break;
+				case "profilo":
+					parent.document.querySelector("#profile-nav-link>button").click();
+					break;
+				case "about":
+					openModal("./about.html");
+					break;
+
+				default:
+					console.error("Impossibile trovare l'argomento selezionato");
+					break;
+			}
+		}
+	</script>
+</body>
+
+</html>

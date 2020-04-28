@@ -1,0 +1,81 @@
+<!--
+	Copyright 2019 FSC
+	
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+	    http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Aiuto - I quiz</title>
+</head>
+
+<body>
+	<div class="sub-wrapper">
+		<div class="content">
+			<section>
+				<header>
+					<h1>Aiuto &mdash; I quiz</h1>
+					<hr />
+				</header>
+				<p>La pagina dei quiz differisce rispetto al normale layout di
+					sistema in quanto, al posto della navbar classica, presenta la
+					lista cliccabile delle domande presenti nello stesso.</p>
+				<p>Esse contengono quattro possibili risposte, di cui una è
+					quella corretta. Al termine del quiz, premendo il pulsante
+					<strong>verifica</strong>, si apre un pop-up che rivela il punteggio
+					che avrai ottenuto dopo lo svolgimento dello stesso. Il
+					pop-up, inoltre, ti permette di: uscire dal quiz, e quindi
+					di ritornare alla lista degli argomenti dello strumento
+					esaminato, oppure, di verificare il quiz controllando la
+					correttezza delle risposte date. La verifica ti mostrerà le
+					domande a cui hai risposto con i seguenti simboli:</p>
+				<ul>
+					<li>
+						<img class="hide" onload="this.className = 'show';" src="../../assets/images/schemi_base_chitarra/indicatore_risposta_corretta.svg" width="17px" height="17px" style="margin-bottom: -4px;" /> se la risposta scelta è corretta.
+					</li>
+					<li>
+						<img class="hide" onload="this.className = 'show';" src="../../assets/images/schemi_base_chitarra/indicatore_risposta_sbagliata.svg" width="17px" height="17px" style="margin-bottom: -4px;" /> se la risposta scelta è sbagliata.
+					</li>
+					<ul>
+						<li>
+							In questo caso, il sistema mostra il simbolo <img class="hide" onload="this.className = 'show';" src="../../assets/images/schemi_base_chitarra/indicatore_risposta_corretta_non_selezionata.svg" width="17px" height="17px" style="margin-bottom: -3px;" /> per indicare quale tra le
+							altre risposte non scelte era
+							quella corretta.
+						</li>
+					</ul>
+					</li>
+					<li>
+						<img class="hide" onload="this.className = 'show';" src="../../assets/images/schemi_base_chitarra/indicatore_disabilitato.svg" width="17px" height="17px" style="margin-bottom: -4px;" /> per le risposte non selezionate.
+					</li>
+				</ul>
+				<p>Ecco, inoltre, un elenco di comandi che puoi eseguire:
+					<ul class="help_ul">
+						<li>
+							Premi <kbd>INVIO</kbd>per avanzare nei quiz.
+						</li>
+						<li>
+							Premi <kbd>ESC</kbd> per uscire dall’applicazione.
+						</li>
+						<li>
+							Premi <kbd>F11</kbd> per attivare/disattivare la modalità a schermo intero.
+						</li>
+					</ul>
+				</p>
+			</section>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!--
+	Copyright 2019 FSC
+	
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+	    http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<title>Teoria - Il Ritmo</title>
+	<link rel="icon" href="../../assets/icon.ico" />
+	<link href="../../assets/css/main/section.css" rel="stylesheet" />
+	<link href="../../assets/css/style.css" rel="stylesheet" />
+	<!-- FontAwesome -->
+	<link href="../../assets/css/fontawesome/css/all.min.css" rel="stylesheet" />
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="StrumentalMente - Dove la musica diventa semplice." />
+	<meta name="keywords" content="StrumentalMente, strumentale, musica, mente, strumenti, imparare, alessi, trollip, multimedia" />
+	<meta name="author" content="FSC" />
+	<meta name="robots" content="index, follow">
+</head>
+
+<body onload="window.parent.setLinks(15, { previous: 'Valori e pause', previousLink: 'base/valori-e-pause', next: 'Il tempo', nextLink: 'base/tempo' });">
+	<div class="topic-wrapper">
+		<div class="content">
+			<article>
+				<header class="show">
+					<div class="blind-audio-buttons">
+						<button type="button" aria-label="Metti in play/pausa l'audio del lettore" title="Metti in play/pausa l'audio del lettore" id="play-blind-audio" onclick="playStopAudio('blind-audio', this, 'stop-blind-audio');" class="btn-audio btn-accessibility">
+							<i class="fas fa-universal-access"></i>
+						</button>
+						<button type="button" aria-label="Ricomincia dall'inizio la lettura" title="Ricomincia dall'inizio la lettura"  id="stop-blind-audio" class="btn-audio audio-reload" style="display: none;">
+							<i class="fas fa-undo"></i>
+						</button>
+					</div>
+					<h1>Il Ritmo</h1>
+					<h2>Cos’è il ritmo</h2>
+					<audio id="blind-audio" src="../../assets/audios/vocals/teoria/base/ritmo.wav"></audio>
+					<div class="breadcrumbs-container">
+						<div class="breadcrumbs">
+							<button type="button" class="breadcrumb" onclick="window.parent.location.href = '../../home-teoria.html';">Teoria</button>
+							<span class="breadcrumb">Base</span>
+							<span class="breadcrumb">Il ritmo (pag. <span id="current-topic-slide">1</span> di <span id="max-topic-slides">1</span>)</span>
+						</div>
+						<div class="page-container">
+							Pag. <span id="current-slide-number">15</span> / <span id="total-slides-number">25</span>
+						</div>
+					</div>
+					<hr />
+				</header>
+				<section>
+					<audio src="../../assets/audios/vocals/teoria/base/ritmo.wav"></audio>
+					<p>Per ritmo si intente la successione di movimenti che si
+						ripetono sempre uguali per velocità e per tempo, ad esempio
+						il <em>movimento di un pendolo</em>. </p>
+					<p>Se si osserva l’oscillazione del pendolo, si può
+						notare che il tempo da questo impiegato per compiere il
+						ciclo completo è <em>sempre uguale</em>, per questo motivo
+						il moto del pendolo è detto <strong>isocrono</strong>.</p>
+					<p>Questo è l’esempio più semplice di un movimento
+						ritmico. Il ritmo perciò è un movimento o una cadenza
+						regolare, mentre un altro qualsiasi movimento che non si
+						ripeta regolarmente si dice <strong>aritmico</strong>.</p>
+					<p>Elemento fondamentale del discorso musicale è il
+						<strong>ritmo</strong>, il quale non è altro che una
+						successione regolare di <strong>accenti forti</strong>
+						(cioè il <em>battere</em>) e <strong>accenti
+							deboli</strong> (cioè il <em>levare</em>) distribuiti in
+						tante misure o battute.
+					</p>
+				</section>
+			</article>
+
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../assets/js/render.js"></script>
+	<script type="text/javascript" src="../../assets/js/main.js"></script>
+
+</body>
+
+</html>

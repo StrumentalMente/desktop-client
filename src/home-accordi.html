@@ -1,0 +1,99 @@
+<!--
+	Copyright 2019 FSC
+	
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+	    http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<title>Accordi</title>
+	<link rel="icon" href="./assets/icon.ico" />
+	<link href="./assets/css/style.css" rel="stylesheet" />
+	<!-- FontAwesome -->
+	<link href="./assets/css/fontawesome/css/all.min.css" rel="stylesheet" />
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="StrumentalMente - Dove la musica diventa semplice." />
+	<meta name="keywords" content="StrumentalMente, strumentale, musica, mente, strumenti, imparare, alessi, trollip, multimedia" />
+	<meta name="author" content="FSC" />
+	<meta name="robots" content="index, follow">
+</head>
+
+<body onload="window.parent.setHelper('accordi');">
+	<div class="topic-wrapper">
+		<div class="content">
+			<article class="fill">
+				<header class="show">
+					<h1>Accordi</h1>
+					<h2>Come si suonano gli accordi</h2>
+					<hr />
+				</header>
+				<section>
+					<p>Non tutti gli strumenti si suonano con gli accordi,
+						perché non tutti possono suonare più note contemporaneamente
+						(es. batteria). Invece, il piano e la chitarra sono
+						strumenti che possono essere suonati con gli accordi. </p>
+					<p>A differenza della chitarra però, il pianoforte ha una
+						maggiore libertà. Nel pianoforte possiamo anche eseguire gli
+						<strong>accordi</strong> con la <strong>mano
+							sinistra</strong>
+						come accompagnamento della <strong>mano destra</strong>
+						che intanto esegue la <strong>melodia</strong>.<p>
+							<p>È necessario imparare a suonare insieme tutte le note di
+								ogni accordo di tre, quattro o cinque suoni.</p>
+				</section>
+			</article>
+			<div class="row topic-buttons" style="grid-template-columns: 32% 32% 32%;">
+				<button class="card-horizontal-alt" style="grid-column: 1; grid-row: 1;" onclick="warnIfIncomplete('piano', 'teoria del pianoforte', 'agli accordi del pianoforte', () => { parent.window.history.replaceState(null,null,'?started=true&topic=./accordi-piano.html'); window.location.href='./accordi-piano.html'; });" title="Apri gli accordi del pianoforte (Alt+A P)">
+					<div class="card-stacked">
+						<div class="card-content">
+							<img class="hide" onload="this.className = 'show';" src="./assets/images/piano11.jpg" />
+						</div>
+						<div class="card-action">
+							<span class="btn-text">Accordi del pianoforte</span>
+						</div>
+					</div>
+				</button>
+				<button class="card-horizontal-alt" style="grid-column: 2; grid-row: 1;" onclick="warnIfIncomplete('chitarra', 'teoria della chitarra', 'agli accordi della chitarra', () => { parent.window.history.replaceState(null,null,'?started=true&topic=./accordi-chitarra.html'); window.location.href='./accordi-chitarra.html'; });" title="Apri gli accordi della chitarra (Alt+A C)">
+					<div class="card-stacked">
+						<div class="card-content">
+							<img class="hide" onload="this.className = 'show';" src="./assets/images/chitarra11.jpg">
+						</div>
+						<div class="card-action">
+							<span class="btn-text">Accordi della chitarra</span>
+						</div>
+					</div>
+				</button>
+
+				<button class="card-horizontal-alt" style="grid-column: 3; grid-row: 1;" onclick="warnIfIncomplete('basso', 'teoria del basso', 'agli accordi del basso', () => { parent.window.history.replaceState(null,null,'?started=true&topic=./accordi-basso.html'); window.location.href='./accordi-basso.html'; });" title="Apri gli accordi del basso (Alt+A B)">
+					<div class="card-stacked">
+						<div class="card-content">
+							<img class="hide" onload="this.className = 'show';" src="./assets/images/basso11.jpg">
+						</div>
+						<div class="card-action">
+							<span class="btn-text">Accordi del basso</span>
+						</div>
+					</div>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="./assets/js/render.js"></script>
+	<script type="text/javascript" src="./assets/js/main.js"></script>
+</body>
+
+</html>

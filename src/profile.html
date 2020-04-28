@@ -1,0 +1,302 @@
+<!--
+	Copyright 2019 FSC
+	
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+	    http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<title>Home - StrumentalMente</title>
+	<link rel="icon" href="./assets/icon.ico" />
+
+	<link href="./assets/css/style.css" rel="stylesheet" />
+	<!-- FontAwesome -->
+	<link href="./assets/css/fontawesome/css/all.min.css" rel="stylesheet" />
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="StrumentalMente - Dove la musica diventa semplice." />
+	<meta name="keywords" content="StrumentalMente, strumentale, musica, mente, strumenti, imparare, alessi, trollip, multimedia" />
+	<meta name="author" content="FSC" />
+	<meta name="robots" content="index, follow">
+	<style>
+		section {
+			text-align: center;
+		}
+
+		body article header {
+			padding-top: 34px;
+			width: 100%;
+			display: inline-block;
+			text-align: center;
+			position: relative;
+		}
+
+		body article header #profile-img {
+			display: inline-block;
+			text-align: center;
+			position: relative;
+			width: 48px;
+			height: 48px;
+			max-width: 100%;
+			border-radius: 50%;
+			transition: all .4s ease-in-out;
+			box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.06);
+		}
+
+		body article header:hover #profile-img {
+			box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
+		}
+
+		#profile-img #initial {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-transform: uppercase;
+			font-size: 20pt;
+			color: white;
+		}
+
+		#username {
+			color: var(--main-color);
+			background-color: transparent;
+			font-weight: 500;
+			font-size: 20px;
+			text-transform: capitalize;
+			display: block;
+			margin: 0 auto;
+			text-align: center;
+			border: none;
+			font-family: var(--font-title);
+		}
+
+		#username+.fa-pen {
+			font-family: "Font Awesome 5 Free";
+			position: absolute;
+			right: 5px;
+			top: 10px;
+			font-size: x-small;
+			color: lightgray;
+			z-index: -1;
+		}
+
+		.quiz-results-container {
+			margin: 0 auto;
+			width: 80%;
+			display: grid;
+			grid-template-columns: auto auto auto;
+			grid-template-rows: auto auto auto;
+			grid-row-gap: 32px;
+			grid-column-gap: 32px;
+		}
+
+		.quiz-result {
+			background: none;
+			border: none;
+			display: block;
+			font: inherit;
+			color: inherit;
+			position: relative;
+			height: 100px;
+			text-align: left;
+			padding: 40px 0 0 32px;
+			border-radius: 5px;
+			box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+			overflow: hidden;
+			cursor: pointer;
+		}
+
+		.quiz-result:hover,
+		.quiz-result:focus {
+			background-color: var(--main-color-on-white);
+		}
+
+		.quiz-result:before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			display: block;
+			width: 0;
+			padding-top: 0;
+			border-radius: 100%;
+			/* animazione del click (v. linee guida Material Design) */
+			background-color: var(--main-color-dark-transparent);
+			-webkit-transform: translate(-50%, -50%);
+			-moz-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			-o-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+
+		.quiz-result:active:before {
+			width: 120%;
+			padding-top: 120%;
+			transition: width 0.2s ease-out, padding-top 0.2s ease-out;
+		}
+
+		.quiz-result span {
+			position: absolute;
+			top: 50%;
+			left: 32px;
+			transform: translate(0, -50%);
+			margin: 0;
+		}
+
+		.quiz-result span>.fas {
+			margin-right: .5vw;
+		}
+
+		.fa-check-circle {
+			color: #00AA00;
+		}
+
+		.fa-times-circle {
+			color: #CC0000;
+		}
+
+		.fa-circle {
+			color: #e55100;
+		}
+
+		.user-container {
+			position: relative;
+			margin: 0 auto;
+			width: fit-content;
+			text-align: center;
+			margin-top: 10px;
+		}
+	</style>
+	<script>
+		function showResetDialog() {
+			const { ipcRenderer } = parent.require("electron");
+			const Dialog = parent.require("./assets/js/modal-dialog-module");
+			let resetDialog = new Dialog;
+			resetDialog.open({
+				title: 'Reset del profilo',
+				content: "<p>Sei sicuro di voler resettare il tuo profilo? Perderai tutti i risultati dei quiz che hai fatto.</p>",
+				buttons: {
+					"No": {
+						style: "btn-outlined",
+						autofocus: false,
+						callback: () => { resetDialog.close(); }
+					},
+					"Sì": {
+						style: "btn",
+						autofocus: true,
+						callback: () => {
+							ipcRenderer.sendSync("save-quiz", { id: "*", passed: undefined });
+							parent.document.getElementById("content-frame").contentWindow.location.reload(true);
+							resetDialog.close();
+						}
+					}
+				}
+			});
+		}
+	</script>
+</head>
+
+<body onload="window.parent.setHelper('profilo');">
+	<div class="topic-wrapper">
+		<div class="content">
+			<article>
+				<header class="show">
+					<div id="profile-img" style="background-color: #E55100;">
+						<span id="initial">U</span>
+					</div>
+					<div class="user-container">
+						<input id="username" type="text" name="username" value="Username" />
+						<i class="fas fa-pen"></i>
+					</div>
+				</header>
+				<section>
+					<h2>Riepilogo dei quiz</h2>
+					<p>Clicca sul titolo del quiz per accedervi.</p>
+					<div class="quiz-results-container">
+						<button onclick="openUrl('./teoria/base/quiz.html');" class="quiz-result" id="base">
+							<span><i class="fas fa-check-circle"></i> Teoria - Base</span>
+						</button>
+						<button type="button" onclick="openUrl('./teoria/avanzata/quiz.html');" class="quiz-result" id="avanzato">
+							<span><i class="fas fa-check-circle"></i> Teoria - Avanzato</span>
+						</button>
+						<button type="button" onclick="openUrl('./strumenti/basso/quiz.html');" class="quiz-result" id="basso">
+							<span><i class="fas fa-check-circle"></i> Teoria - Basso</span>
+						</button>
+						<button type="button" onclick="openUrl('./strumenti/batteria/quiz.html');" class="quiz-result" id="batteria">
+							<span><i class="fas fa-check-circle"></i> Teoria - Batteria</span>
+						</button>
+						<button type="button" onclick="openUrl('./strumenti/chitarra/quiz.html');" class="quiz-result" id="chitarra">
+							<span><i class="fas fa-check-circle"></i> Teoria - Chitarra</span>
+						</button>
+						<button type="button" onclick="openUrl('./strumenti/piano/quiz.html');" class="quiz-result" id="piano">
+							<span><i class="fas fa-check-circle"></i> Teoria - Pianoforte</span>
+						</button>
+						<button type="button" onclick="openUrl('./accordi/basso/quiz.html');" class="quiz-result" id="accordi-basso">
+							<span><i class="fas fa-check-circle"></i> Accordi - Basso</span>
+						</button>
+						<button type="button" onclick="openUrl('./accordi/chitarra/quiz.html');" class="quiz-result" id="accordi-chitarra">
+							<span><i class="fas fa-check-circle"></i> Accordi - Chitarra</span>
+						</button>
+						<button type="button" onclick="openUrl('./accordi/piano/quiz.html');" class="quiz-result" id="accordi-piano">
+							<span><i class="fas fa-check-circle"></i> Accordi - Pianoforte</span>
+						</button>
+					</div>
+					<div style="margin: 15px 0; text-align: center;">
+						<button type="button" class="btn-text" onclick="showResetDialog();">
+							Reset del profilo
+						</button>
+					</div>
+				</section>
+			</article>
+		</div>
+	</div>
+
+	<script src="./assets/js/render.js"></script>
+	<script src="./assets/js/main.js"></script>
+	<script>
+		(function () {
+			let usernameContainer = document.getElementById("username");
+			usernameContainer.value = parent.getUsername();
+			let changeProfileImage = () => {
+				let colors = Array("#E55100", "#E58B00", "#0C4D95", "#00976A");
+				document.getElementById("profile-img").style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+				document.getElementById("initial").innerHTML = usernameContainer.value.charAt(0);
+			};
+			changeProfileImage();
+			usernameContainer.onchange = () => { parent.setUsername(usernameContainer.value); changeProfileImage(); };
+			usernameContainer.onkeypress = (e) => {
+				if (e.key == "Enter") {
+					usernameContainer.blur();
+					return false;
+				}
+			};
+			let containers = document.getElementsByClassName("quiz-result");
+
+			for (var i = 0; i < containers.length; i++) {
+				let hasPassedQuiz = parent.getQuiz(containers[i].id);
+				if (hasPassedQuiz == true)
+					containers[i].getElementsByTagName("i")[0].className = "fas fa-check-circle";
+				else if (hasPassedQuiz != undefined)
+					containers[i].getElementsByTagName("i")[0].className = "fas fa-times-circle";
+				else
+					containers[i].getElementsByTagName("i")[0].className = "fas fa-circle";
+
+			}
+		})();
+	</script>
+</body>
+
+</html>
